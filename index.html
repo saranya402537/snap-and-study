@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snap & Study AI</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap & Study AI</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>📚 Snap & Study AI</h1>
-    <p>Upload any study material or handwritten notes to get instant explanations!</p>
-    
-    <div class="upload-section">
-      <input type="file" id="imageInput" accept="image/*">
-      <div id="previewContainer">
-        <img id="imagePreview" src="" alt="Preview" style="display: none;">
-      </div>
+    <div class="container">
+        <h1>📚 Snap & Study AI</h1>
+        <p>Upload any study material or handwritten notes to get instant explanations!</p>
+        
+        <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)">
+        
+        <div id="imagePreviewContainer" style="margin-top: 15px;">
+            <img id="imagePreview" src="" alt="Selected Image" style="max-width: 100%; display: none; border-radius: 8px;">
+        </div>
+
+        <input type="text" id="promptInput" placeholder="Give me information about this picture" style="margin-top: 15px; width: 100%; padding: 10px; box-sizing: border-box;">
+
+        <button onclick="analyzeImage()" style="margin-top: 15px; width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Analyze Image 🚀</button>
+
+        <div id="result" style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-radius: 5px; white-space: pre-wrap;"></div>
     </div>
 
-    <input type="text" id="questionInput" placeholder="Ask a question about this image (Optional)...">
-    <button id="sendBtn" onclick="analyzeImage()">Analyze Image 🚀</button>
-
-    <div id="loading" style="display: none;">Analyzing your study material... ⏳</div>
-    <div id="result" class="result-box" style="display: none;"></div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
