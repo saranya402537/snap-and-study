@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snap & Study AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Snap & Study AI</h1>
+    <p>Upload any study material or handwritten notes to get instant explanations!</p>
+    
+    <div class="upload-section">
+      <input type="file" id="imageInput" accept="image/*">
+      <div id="previewContainer">
+        <img id="imagePreview" src="" alt="Preview" style="display: none;">
+      </div>
+    </div>
+
+    <input type="text" id="questionInput" placeholder="Ask a question about this image (Optional)...">
+    <button id="sendBtn" onclick="analyzeImage()">Analyze Image 🚀</button>
+
+    <div id="loading" style="display: none;">Analyzing your study material... ⏳</div>
+    <div id="result" class="result-box" style="display: none;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
