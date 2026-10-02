@@ -1,2 +1,14 @@
-# snap-and-study
-Snap &amp; Study is an AI-powered educational web app designed to help students learn faster. Users can upload images of textbook pages, handwritten notes, or complex diagrams, and the AI instantly analyzes the image to provide clear explanations and answer questions about the content.
+ # snap-and-study
+
+Snap & Study is an AI Vision application built to assist students with their learning materials.
+
+## Features
+- Upload photos of notes, textbooks, or study diagrams.
+- AI powered visual recognition and explanation using Google Gemini.
+- Interactive question-answering based on the uploaded image.
+
+## Setup Instructions
+1. Clone or download this repository.
+2. Open `index.html` in any modern web browser.
+3. Make sure to provide a valid Gemini API Key in `script.js`.
+
