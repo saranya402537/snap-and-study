@@ -11,7 +11,7 @@
         <h1>📚 Snap & Study AI</h1>
         <p>Upload any study material or handwritten notes to get instant explanations!</p>
         
-        <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)">
+        <input type="file" id="imageInput" accept="image/*">
         
         <div id="imagePreviewContainer" style="margin-top: 15px;">
             <img id="imagePreview" src="" alt="Selected Image" style="max-width: 100%; display: none; border-radius: 8px;">
@@ -19,7 +19,7 @@
 
         <input type="text" id="promptInput" placeholder="Give me information about this picture" style="margin-top: 15px; width: 100%; padding: 10px; box-sizing: border-box;">
 
-        <button onclick="analyzeImage()" style="margin-top: 15px; width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Analyze Image 🚀</button>
+        <button id="analyzeBtn" style="margin-top: 15px; width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Analyze Image 🚀</button>
 
         <div id="result" style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-radius: 5px; white-space: pre-wrap;"></div>
     </div>
