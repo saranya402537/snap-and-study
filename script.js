@@ -1,9 +1,19 @@
-const API_KEY = "YOUR_GEMINI_API_KEY"; // 👈 உங்கள் Gemini API Key-ஐ இங்கு போடவும்
-
+const API_KEY = "YOUR_GEMINI_API_KEY"; 
+function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+        const output = document.getElementById('imagePreview');
+        output.src = reader.result;
+        output.style.display = 'block';
+    };
+    if (event.target.files[0]) {
+        reader.readAsDataURL(event.target.files[0]);
+    }
+}
 async function analyzeImage() {
-    const fileInput = document.getElementById('imageInput') || document.querySelector('input[type="file"]');
-    const promptInput = document.getElementById('promptInput') || document.querySelector('input[type="text"]');
-    const resultDiv = document.getElementById('result') || document.querySelector('.result') || document.querySelector('#output');
+    const fileInput = document.getElementById('imageInput');
+    const promptInput = document.getElementById('promptInput');
+    const resultDiv = document.getElementById('result');
 
     if (!fileInput.files[0]) {
         alert("Please select an image first!");
@@ -37,8 +47,10 @@ async function analyzeImage() {
             
             if (data.candidates && data.candidates[0].content.parts[0].text) {
                 resultDiv.innerText = data.candidates[0].content.parts[0].text;
+            } else if (data.error) {
+                resultDiv.innerText = "API Error: " + data.error.message;
             } else {
-                resultDiv.innerText = "Error: Unable to analyze. Check API Key or image format.";
+                resultDiv.innerText = "Unable to analyze the image. Please check API Key.";
             }
         } catch (error) {
             console.error(error);
